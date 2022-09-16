@@ -15,15 +15,23 @@
     </body>
 </html>
 <?php
-$con=mysqli_connect("localhost","cpses_bab9qnk8ow@localhost","")
+$con=mysqli_connect(
+    $hostname = ini_get("mysqli.default_host"),
+    $username = ini_get("mysqli.default_user"),
+    $password = ini_get("mysqli.default_pw"),
+    $database = "",
+    $port = ini_get("mysqli.default_port"),
+    $socket = ini_get("mysqli.default_socket")
+);
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = mysqli_real_escape_string($_POST['username']);
-    $password = mysqli_real_escape_string($_POST['password']);
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
     $bool = true;
    
-    mysqli_connect("localhost", "root","") or die(mysql_error());      //Connect to server
-    mysqli_select_db("first_db") or due("Cannot connect to database"); //Connect to database
-    $query = mysqli_query("Select * from users"); //Query the users table
+    mysqli_connect("localhost", "root","") or die(mysqli_error($con));      //Connect to server
+    mysqli_select_db($con, "first_db") or die("Cannot connect to database"); //Connect to database
+    $query = mysqli_query($con,"Select * from users"); //Query the users table
     while($row = mysqli_fetch_array($query)) //display all rows from query
     {
         $table_users == $row['username']; // the first username row 
@@ -40,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if($bool) // checks if bool is true
     {
-        mysqli_query("INSERT INTO users (username, password) _
+        mysqli_query($con ,"INSERT INTO users (username, password) _
                      VALUES ('$username', 'password')"); // inserts value into table users
         Print '<script>alert("Successfully Registered!");</script>';      // Prompts the user
         Print '<script>window.location.assign("register.php");</script>'; // redirects to 
