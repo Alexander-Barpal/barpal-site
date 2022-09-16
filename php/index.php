@@ -22,7 +22,7 @@ or die(mysqli_error($mysql));
 // Loop thru each record (using the PHP $row variable),
 // then display the first name and last name of each record.
 while($row = mysqli_fetch_array($result)){
-	echo $row['FirstName']. " - ". $row['LastName'];
+	echo $row['name']. " - ". $row['id']. " - ". $row['email'];
 	echo "<br>";
 }
 ?>
