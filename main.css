@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+	box-sizing: border-box;
+}
+
+body {
+	box-sizing: border-box;
+	vertical-align: baseline;
+	background: #E0E0E0;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif", "Arial Narrow";
+	color: #353535;	
+	font-size: 14pt;
+	line-height: 1.75;
+	letter-spacing: 0.05em;
+	font-variant: small-caps;
+}
