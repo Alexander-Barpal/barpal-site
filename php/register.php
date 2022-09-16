@@ -19,7 +19,7 @@ $con=mysqli_connect(
     $hostname = ini_get("mysqli.default_host"),
     $username = ini_get("mysqli.default_user"),
     $password = ini_get("mysqli.default_pw"),
-    $database = "",
+    $database = "barpalsite_php-test",
     $port = ini_get("mysqli.default_port"),
     $socket = ini_get("mysqli.default_socket")
 );
