@@ -29,8 +29,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $bool = true;
    
-    mysqli_connect("localhost", "root","") or die(mysqli_error($con));      //Connect to server
-    mysqli_select_db($con, "first_db") or die("Cannot connect to database"); //Connect to database
     $query = mysqli_query($con,"Select * from users"); //Query the users table
     while($row = mysqli_fetch_array($query)) //display all rows from query
     {
