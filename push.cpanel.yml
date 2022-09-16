@@ -3,5 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/barpalsite/git/barpal-site
     - /bin/cp landing.html $DEPLOYPATH
-    - /bin/cp main.css $DEPLOYPATH
-    - /bin/cp index.php $DEPLOYPATH
+    - /bin/cp * $DEPLOYPATH
