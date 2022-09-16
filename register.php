@@ -15,11 +15,36 @@
     </body>
 </html>
 <?php
-if($_SERVER["REQUEST METHOD"] == "POST"){
-    $username = mysql_real_escape_string($_POST['username']);
-    $password = mysql_real_escape_string($_POST['password']);
+$con=mysqli_connect("localhost","cpses_bab9qnk8ow@localhost","")
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $username = mysqli_real_escape_string($_POST['username']);
+    $password = mysqli_real_escape_string($_POST['password']);
+    $bool = true;
+   
+    mysqli_connect("localhost", "root","") or die(mysql_error());      //Connect to server
+    mysqli_select_db("first_db") or due("Cannot connect to database"); //Connect to database
+    $query = mysqli_query("Select * from users"); //Query the users table
+    while($row = mysqli_fetch_array($query)) //display all rows from query
+    {
+        $table_users == $row['username']; // the first username row 
+                                          // is passed on to $table_users, 
+                                          // and so on until the query is finished
+        if($username == $table_users)     // checks if there are any matching fields
+        {
+            $bool = false; // sets bool to false
+            Print '<script>alert("Username has been taken!");</script>';     //Prompts the user
+            Print '<script>window.location.assign("register.php");</script>';//redirects to 
+                                                                             //register.php
+        }
+    }
 
-    echo "Username entered is: ". $username . "<br />";
-    echo "Password entered is: ". $password;
+    if($bool) // checks if bool is true
+    {
+        mysqli_query("INSERT INTO users (username, password) _
+                     VALUES ('$username', 'password')"); // inserts value into table users
+        Print '<script>alert("Successfully Registered!");</script>';      // Prompts the user
+        Print '<script>window.location.assign("register.php");</script>'; // redirects to 
+                                                                          // register.php
+    }
 }
 ?>
