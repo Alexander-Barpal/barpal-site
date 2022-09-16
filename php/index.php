@@ -10,7 +10,7 @@
 </html> 
 <?php
 // Connect to the database server
-$mysql = mysqli_connect("localhost", "admin", "P4ss112701.") or die(mysqli_error($mysql));
+$mysql = mysqli_connect("localhost", "barpalsite_admin", "P4ss112701.") or die(mysqli_error($mysql));
 
 // Open to the database
 mysqli_select_db($mysql, "barpalsite_PHP-test") or die(mysqli_error($mysql));
