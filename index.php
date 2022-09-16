@@ -6,7 +6,11 @@
         <?php
             echo "<p>Hello World!</p>";
         ?>
-        <a href="login.php"> Click here to login 
+        <div>
+        <a href="login.php"> Click here to login
+        </div>
+        <div>
         <a href="register.php"> Click here to register 
+        </div>
     </body>
 </html> 
