@@ -13,7 +13,7 @@
 $mysql = mysqli_connect("localhost", "admin", "P4ss112701.") or die(mysqli_error($mysql));
 
 // Open to the database
-mysqli_select_db($mysql, "barpalsite_PHP_test") or die(mysqli_error($mysql));
+mysqli_select_db($mysql, "barpalsite_PHP-test") or die(mysqli_error($mysql));
 
 // Select all records from the "Individual" table
 $result = mysqli_query($mysql, "SELECT * FROM lifetimes")
