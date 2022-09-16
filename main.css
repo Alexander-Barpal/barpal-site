@@ -15,3 +15,14 @@ body {
 	letter-spacing: 0.05em;
 	font-variant: small-caps;
 }
+.grid-2x1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.grid-3x2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 20px;
+}
