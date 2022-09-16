@@ -25,8 +25,8 @@ $con=mysqli_connect(
 );
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = mysqli_real_escape_string($con, $_POST['username']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $usernamew = mysqli_real_escape_string($con, $_POST['username']);
+    $passwordw = mysqli_real_escape_string($con, $_POST['password']);
     $bool = true;
    
     $query = mysqli_query($con,"Select * from users"); //Query the users table
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $table_users == $row['username']; // the first username row 
                                           // is passed on to $table_users, 
                                           // and so on until the query is finished
-        if($username == $table_users)     // checks if there are any matching fields
+        if($usernamew == $table_users)     // checks if there are any matching fields
         {
             $bool = false; // sets bool to false
             Print '<script>alert("Username has been taken!");</script>';     //Prompts the user
@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($bool) // checks if bool is true
     {
         mysqli_query($con ,"INSERT INTO users (username, password) _
-                     VALUES ('$username', 'password')"); // inserts value into table users
+                     VALUES ('$usernamew', 'passwordw')"); // inserts value into table users
         Print '<script>alert("Successfully Registered!");</script>';      // Prompts the user
         Print '<script>window.location.assign("register.php");</script>'; // redirects to 
                                                                           // register.php
