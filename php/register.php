@@ -17,8 +17,8 @@
 <?php
 $con=mysqli_connect(
     $hostname = ini_get("mysqli.default_host"),
-    $username = ini_get("mysqli.default_user"),
-    $password = ini_get("mysqli.default_pw"),
+    $username = ini_get("admin"),
+    $password = ini_get("P4ss112701."),
     $database = "barpalsite_php-test",
     $port = ini_get("mysqli.default_port"),
     $socket = ini_get("mysqli.default_socket")
