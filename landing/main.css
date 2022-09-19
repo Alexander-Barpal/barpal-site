@@ -12,26 +12,61 @@ body {
 	font-variant: small-caps;
 	padding: 40px;
 }
+
+.grid-image1 {
+	grid-area: image1;
+}
+
+.grid-text1 {
+	grid-area: text1;
+}
+
+.grid-image2 {
+	grid-area: image2;
+}
+
+.grid-text2 {
+	grid-area: text2;
+}
+
+.grid-image3 {
+	grid-area: image3;
+}
+
+.grid-text3 {
+	grid-area: text3;
+}
+
 .grid-landing {
 	display: grid;
     grid-template-areas: 
-	'images text-box';
+	'image1 text1';
 	gap: 20px;
 }
 
-.grid-image {
-	grid-area: images;
-}
-
-.grid-text{
-	grid-area: text-box;
+.grid-projects {
+	display: grid;
+	grid-template-areas: 
+	"image1 text1"
+	"text2 image2"
+	"image3 text3";
 }
 
 @media (max-width: 800px){
 	.grid-landing {
 		grid-template-areas:
-		'images'
-		'text-box';
+		'image1'
+		'text1';
+	}
+
+	.grid-projects {
+		grid-template-areas: 
+		'image1'
+		'text1'
+		'image2'
+		'text2'
+		'image3'
+		'text3';
 	}
 }
 
