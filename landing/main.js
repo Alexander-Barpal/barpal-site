@@ -1,27 +1,42 @@
 
-// Get the modal
-var modal = document.getElementById("project1");
 
-// Get the button that opens the modal
-var pro1 = document.getElementById("pro1");
+const body = document.getElementById('body')
+const cont = document.getElementById('cont')
+const modalCont = document.getElementById('modalCont');
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-pro1.onclick = function(){
-  modal.style.display = "block";
-};
 
-// When the user clicks on <span> (x), close the modal
-span.onclick =function(){
-  modal.style.display = "none";
-};
+function openModal(id){
+  
+  modalId = id
+  modalCont.style.display = 'block';
+  modalCont.classList.add('backgroundIn');
+  modal = document.getElementById(id);
+  modal.classList.add('modalIn');
+  body.classList.add('modal-active');
+  cont.classList.add('shrink');
+}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick =function(event){
+function closeModal() {
+  modal = document.getElementById(modalId);
+  modal.classList.add('modalOut');
+  modalCont.classList.add('backroundOut');
+  cont.classList.add('expand');
+  body.classList.remove('modal-active');
+  modalCont.style.display = 'hidden';
+}
+
+window.onclick = function(event){
+  console.log('button clicked')
+  modal = document.getElementById(modalId);
   if (event.target == modal) {
-    modal.style.display = "none";
+    modalCont.classList.add('backroundOut');
+    modal.classList.add('modalOut');
+    cont.classList.add('expand');
+    body.classList.remove('modal-active');
+    modalCont.style.display = 'hidden';
   }
-};
-console.log("working js");
+}
+
+var modalId;
+var modal;
