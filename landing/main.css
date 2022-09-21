@@ -12,9 +12,6 @@ body {
 	font-variant: small-caps;
 	padding: 40px;
 }
-.modal-active{
-	overflow: hidden;
-}
 
 .container {
 	background: #ededed;
