@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="hystmodal.css" />
+        <link rel="stylesheet" href="main.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projects</title>
     </head>
-    <body id="body">
-        <div id="cont" class="container">
-            <div>
-                   <a href="index.html"><button class="button">Main Page</button></a>
-            </div>
-            <div class="grid-projects">
-                <div class="grid-image1">
-                    <img src="../images/DSC_0012.jpg" alt=""/>
-                </div>
-                <div class="grid-text1 text-box">
-                    <h3>Project 1</h3>
-                    <button class="button" name="modal-button" data-modal="project1">Read More</button>
-                </div>
-                <div class="grid-image2">
-                    <img src="../images/DSC_0014 (1).jpg" alt="" />
-                </div>
-                <div class="grid-text2 text-box">
-                    <h3>PRoject 2</h3>
-                </div>
-                <div class="grid-image3">
-                    <img src="../images/DSC_0018.jpg" />
-                </div>
-                <div class="grid-text3 text-box">
-                   <h3>Project 3</h3>
-                </div>
-            </div>
-        </div>
-    </body>
-        <div id="modalCont" class="modal-container" >
-            <div id="project1" class="modal">
-                <span class="close">&times</span>
-                <p>
-                    Sphinx Of Black Quartz Judge My Vow Sphinx
-                    Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow
-                </p>
-                <p>
-                    Sphinx Of Black Quartz Judge My Vow Sphinx
-                    Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow
-                </p>
-            </div>
-        </div>
+    <body>
+      <div class="container">
+        <a href="index.html"><button class="btn">Main Page</button></a>
+        <div class="grid-projects">
+          <div class="grid-image1">
+              <img src="../images/DSC_0012.jpg" alt=""/>
+          </div>
+          <div class="grid-text1">
+              <h3>Project 1</h3>
+              <p>
+                Sphinx Of Black Quartz Judge My Vow Sphinx
+                Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
+                Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
+                Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
+                Judge My Vow Sphinx Of Black Quartz Judge My Vow
+            </p>
+              <a href="#" data-hystmodal="#myModal"><Button class="btn">Open modal with id=myModal</Button></a>
+          </div>
+          <div class="grid-image2">
+              <img src="../images/DSC_0014 (1).jpg" alt="" />
+          </div>
+          <div class="grid-text2">
+              <h3>PRoject 2</h3>
+              <a href="#" data-hystmodal="#modal2"><button class="btn">open modal 2</button></a>
+          </div>
+          <div class="grid-image3">
+              <img src="../images/DSC_0018.jpg" />
+          </div>
+          <div class="grid-text3">
+             <h3>Project 3</h3>
+          </div>
+        </div>       
+      </div>        
 
-    <script src="main.js"></script>
+      <div class="hystmodal" id="myModal" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window container" role="dialog" aria-modal="true">
+                <button data-hystclose class="hystmodal__close">&times;</button>                  
+                <h2>test text for Mymodal</h2>
+                <p>
+                  Sphinx Of Black Quartz Judge My Vow Sphinx
+                  Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
+                  Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
+                  Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
+                  Judge My Vow Sphinx Of Black Quartz Judge My Vow
+              </p>
+            </div>
+        </div>
+      </div>      
+
+      <div class="hystmodal" id="modal2" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window container" role="dialog" aria-modal="true">
+                <button data-hystclose class="hystmodal__close">&times;</button>                  
+                <p>test text for modal 2</p>
+            </div>
+        </div>
+      </div>
+    </body>
+  <script src="hystmodal.min.js"></script>
 </html>

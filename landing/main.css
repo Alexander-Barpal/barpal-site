@@ -11,8 +11,9 @@ body {
 	letter-spacing: 0.05em;
 	font-variant: small-caps;
 	padding: 40px;
+	align-content: center;
+	text-align: center;
 }
-
 .container {
 	background: #ededed;
 	padding: 30px;
@@ -77,12 +78,7 @@ body {
 	}
 }
 
-.text-box {
-	align-content: center;
-	text-align: center;
-}
-
-.button {
+.btn {
 	background-color: #E0E0E0;
 	color: #353535;
 	border-radius: 10px;
@@ -96,7 +92,7 @@ body {
 	cursor: pointer;
 	transition-duration: 0.5s;
 }
-.button:hover {
+.btn:hover {
 	background-color: #353535;
 	color: #E0E0E0;
 }
@@ -108,117 +104,3 @@ img {
 	border-radius: 10px;
   }
 
-.modal-container {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	padding-top: 100px;
-	background: rgba(0,0,0,.0);
-}
-
-.modal {
-	background: #E0E0E0;
-	color: #353535;
-	margin: auto;
-	padding: 20px;
-	width: 80%;
-	border-radius: 12px;
-	box-sizing: border-box;
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif", "Arial Narrow";	
-	font-size: 14pt;
-	line-height: 1.75;
-	letter-spacing: 0.05em;
-	font-variant: small-caps;
-}
-
-.backgroundIn {
-	background: rgba(0,0,0,.0);
-	animation: fadeIn .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-.modalIn {
-	transform: scale(0);
-	animation: zoomIn .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-.shrink {
-	animation: scaleBack .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-.backgroundOut {
-	animation: fadeOut .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-.modalOut {
-	animation: zoomOut .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-.expand {
-	animation: scaleForward .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-
-@keyframes fadeIn {
-	0% {
-		background: rgba(0,0,0,.0);
-	}
-	100% {
-		background: rgba(0,0,0,.7);
-	}
-}
-
-@keyframes fadeOut {
-	0% {
-		background: rgba(0,0,0,.7);
-	}
-	100% {
-		background: rgba(0,0,0,0.0);
-	}
-}
-
-@keyframes zoomIn {
-	0% {
-		transform: scale(0);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-@keyframes zoomOut {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(0);
-	}
-}
-
-@keyframes scaleBack {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(.85);
-	}
-}
-
-@keyframes scaleForward {
-	0% {
-		transform: scale(.85);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-
-.close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-.close:hover, .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
