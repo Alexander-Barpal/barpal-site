@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="hystmodal.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Landing Page</title>
     </head>
@@ -22,8 +23,19 @@
                 </p>
                 <a href="Projects.html"><button class="btn">Projects</button></a>
                 <div><br></div>
-                <button class="btn">Button #2</button>
+                <a href="about.html"><button class="btn">About Me</button></a>
+                <div><br></div>
+                <a href="#" data-hystmodal="#modal"><button class="btn">open modal</button></a>
             </div>
         </div>
+        <div class="hystmodal" id="modal" aria-hidden="true">
+            <div class="hystmodal__wrap">
+                <div class="hystmodal__window container" role="dialog" aria-modal="true">
+                    <button data-hystclose class="hystmodal__close">&times;</button>                  
+                    <p>yfyf</p>
+                </div>
+            </div>
+          </div>
     </body>
+    <script src="hystmodal.min.js"></script>
 </html>
