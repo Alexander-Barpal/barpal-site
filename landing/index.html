@@ -1,44 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="main.css" />
-        <link rel="stylesheet" href="hystmodal.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Landing Page</title>
-    </head>
-    <body>
+  <head>
 
-        <div class="grid-landing container">
-            <div class="grid-image1">
-                <img src="../images/DSC_0051.jpg" alt="" />
-            </div>
-            <div class="grid-text1 text-box">
-                <h2>Alexander Barpal</h2>
-                <p>
-                    Sphinx Of Black Quartz Judge My Vow Sphinx
-                    Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow Sphinx Of Black Quartz 
-                    Judge My Vow Sphinx Of Black Quartz Judge My Vow
-                </p>
-                <a href="Projects.html"><button class="btn">Projects</button></a>
-                <div><br></div>
-                <a href="about.html"><button class="btn">About Me</button></a>
-                <div><br></div>
-                <a href="#" data-hystmodal="#modal"><button class="btn">open modal</button></a>
-            </div>
+    <link rel="stylesheet" href="test.css">
+  </head>
+  <body id="body">
+    <div class="grid">
+        <img src="../images/DSC_0012.jpg" alt=""/>
+        <div>
+            <h1>alexander barpal</h1>
+            <ul class="btns">
+                <li><a href="#Projects" onclick="stopScroll()"><button class="btn">Open Projects</button></a></li>
+                <li><a href="#About" onclick="stopScroll()"><button class="btn">Open about</button></a></li>
+            </ul>
         </div>
-        <div class="hystmodal" id="modal" aria-hidden="true">
-            <div class="hystmodal__wrap">
-                <div class="hystmodal__window container" role="dialog" aria-modal="true">
-                    <button data-hystclose class="hystmodal__close">&times;</button>                  
-                    <p>test - phone</p>
-                    <p>test - email</p>
-                    <p>test - linkedin</p>
-                    <p>test - github</p>
-                </div>
-            </div>
-          </div>
-    </body>
-    <script src="hystmodal.min.js"></script>
+        <div>
+            <P>test text</P>
+        </div>
+        <img src="../images/DSC_0020.jpg" alt=""/>
+    </div>
+
+    <div>
+        <div class="sublightbox" id="Projects/UIPath">
+            <figure>
+                <a href="#Projects" class="close"></a>
+                <figcaption>
+                    Uipath text
+                </figcaption>
+            </figure>
+        </div> 
+        <div class="sublightbox" id="Projects/Website">
+            <figure>
+                <a href="#Projects" class="close"></a>
+                <figcaption>
+                      website text goes here
+                </figcaption>
+            </figure>
+        </div>  
+        <div class="sublightbox" id="Projects/Electronics">
+            <figure>
+                <a href="#Projects" class="close"></a>
+                <figcaption>
+                    electronics text goes here
+                </figcaption>
+            </figure>
+        </div>
+        <div class="lightbox" id="Projects">
+            <figure>
+                <a href="#" class="close" onclick="startScroll()"></a>
+                <figcaption>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis enim, placerat id eleifend eu, semper vel sem.
+                    <ul class="btns">
+                        <li><a href="#Projects/UIPath"><button class="btn">Open UIPath</button></a></li>
+                        <li><a href="#Projects/Website"><button class="btn">Website</button></a></li>
+                        <li><a href="#Projects/Electronics"><button class="btn">Electronics</button></a></li>
+                    </ul>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="lightbox" id="About">
+        <figure>
+            <a href="#" class="close" onclick="startScroll()"></a>
+            <figcaption>
+                about text goes here
+            </figcaption>
+        </figure>
+    </div>     
+</body>
+<script src="main.js"></script>
 </html>
