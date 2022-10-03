@@ -1,10 +1,8 @@
-
-  /* Unopened lightbox */
 .lightbox {
     display: none;
     overflow: auto;
 }
-  /* Opened lightbox */
+
 .lightbox:target {
     position: absolute;
     left: 0;
@@ -13,9 +11,10 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    overflow: auto;
     
 }
-  /* Lightbox content */
+
 .lightbox figcaption {
     max-width: 70vw;
     position: relative;
@@ -24,11 +23,12 @@
 	border-radius: 10px;
     top: 4vw;
 }
-  /* Close button */
+
 .lightbox .close {
     position: relative;
     display: block;
 }
+
 .lightbox .close::after {
     right: -1rem;
     top: -1rem;
@@ -46,7 +46,10 @@
     cursor: pointer;
     top: 3vw;
 }
-  /* Lightbox overlay */
+.lightbox .close:hover::after {
+    color: red;
+}
+
 .lightbox .close::before {
     left: 0;
     top: 0;
@@ -62,7 +65,7 @@
     display: none;
     overflow: auto;
 }
-  /* Opened lightbox */
+
 .sublightbox:target {
     position: absolute;
     left: 0;
@@ -73,6 +76,7 @@
     justify-content: center;
     z-index: 2;
 }
+
 .sublightbox:target ~ .lightbox {
     position: absolute;
     left: 0;
@@ -82,7 +86,7 @@
     display: flex;
     justify-content: center;
 }
-  /* Lightbox content */
+
 .sublightbox figcaption {
     max-width: 65vw;
     position: relative;
@@ -92,11 +96,12 @@
     z-index: 2;
     top: 4vw;
 }
-  /* Close button */
+
 .sublightbox .close {
     position: relative;
     display: block;
 }
+
 .sublightbox .close::after {
     right: -1rem;
     top: -1rem;
@@ -115,7 +120,11 @@
     z-index: 3;
     top: 3vw;
 }
-  /* Lightbox overlay */
+
+.sublightbox .close:hover::after {
+    color: red;
+}
+
 .sublightbox .close::before {
     left: 0;
     top: 0;
@@ -140,6 +149,7 @@ body {
 	align-content: center;
 	text-align: center;
 }
+
 .btn {
 	background-color: #E0E0E0;
 	color: #353535;
