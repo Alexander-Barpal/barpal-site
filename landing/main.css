@@ -2,6 +2,7 @@
   /* Unopened lightbox */
 .lightbox {
     display: none;
+    overflow: auto;
 }
   /* Opened lightbox */
 .lightbox:target {
@@ -11,7 +12,6 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     
 }
@@ -19,8 +19,10 @@
 .lightbox figcaption {
     max-width: 70vw;
     position: relative;
-    padding: 1.5em;
-    background-color: #8ebf42;
+    background: #ededed;
+	padding: 30px;
+	border-radius: 10px;
+    top: 4vw;
 }
   /* Close button */
 .lightbox .close {
@@ -42,6 +44,7 @@
     color: white;
     content: "×";
     cursor: pointer;
+    top: 3vw;
 }
   /* Lightbox overlay */
 .lightbox .close::before {
@@ -57,6 +60,7 @@
 
 .sublightbox {
     display: none;
+    overflow: auto;
 }
   /* Opened lightbox */
 .sublightbox:target {
@@ -66,7 +70,6 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     z-index: 2;
 }
@@ -77,16 +80,17 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
   /* Lightbox content */
 .sublightbox figcaption {
     max-width: 65vw;
     position: relative;
-    padding: 1.5em;
-    background-color: #b86a10;
+    background: #ededed;
+	padding: 30px;
+	border-radius: 10px;
     z-index: 2;
+    top: 4vw;
 }
   /* Close button */
 .sublightbox .close {
@@ -109,6 +113,7 @@
     content: "×";
     cursor: pointer;
     z-index: 3;
+    top: 3vw;
 }
   /* Lightbox overlay */
 .sublightbox .close::before {

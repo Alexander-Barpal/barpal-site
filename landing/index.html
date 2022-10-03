@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body id="body">
+        <div class="grid">
+            <img src="../images/DSC_0012.jpg" alt=""/>
+            <div>
+                <h1>alexander barpal</h1>
+                <ul class="btns">
+                    <li><a href="#Projects" onclick="stopScroll('body')"><button class="btn">Open Projects</button></a></li>
+                    <li><a href="#About" onclick="stopScroll('body')"><button class="btn">Open about</button></a></li>
+                </ul>
+            </div>
+            <div>
+                <P>test text</P>
+            </div>
+            <img src="../images/DSC_0020.jpg" alt=""/>
+        </div>
 
-    <link rel="stylesheet" href="test.css">
-  </head>
-  <body id="body">
-    <div class="grid">
-        <img src="../images/DSC_0012.jpg" alt=""/>
         <div>
-            <h1>alexander barpal</h1>
-            <ul class="btns">
-                <li><a href="#Projects" onclick="stopScroll()"><button class="btn">Open Projects</button></a></li>
-                <li><a href="#About" onclick="stopScroll()"><button class="btn">Open about</button></a></li>
-            </ul>
+            <div class="sublightbox" id="Projects/UIPath">
+                <figure>
+                    <a href="#Projects" class="close" onclick="startScroll('Projects')"></a>
+                    <figcaption>
+                        <img src="../images/DSC_0057.jpg" alt="">
+                    </figcaption>
+                </figure>
+            </div> 
+            <div class="sublightbox" id="Projects/Website">
+                <figure>
+                    <a href="#Projects" class="close" onclick="startScroll('Projects')"></a>
+                    <figcaption>
+                        website text goes here
+                    </figcaption>
+                </figure>
+            </div>  
+            <div class="sublightbox" id="Projects/Electronics">
+                <figure>
+                    <a href="#Projects" class="close" onclick="startScroll('Projects')"></a>
+                    <figcaption>
+                        electronics text goes here
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="lightbox" id="Projects">
+                <figure>
+                    <a href="#" class="close" onclick="startScroll('body')"></a>
+                    <figcaption>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis enim, placerat id eleifend eu, semper vel sem.
+                        <ul class="btns">
+                            <li><a href="#Projects/UIPath" onclick="stopSroll('Projects')"><button class="btn">Open UIPath</button></a></li>
+                            <li><a href="#Projects/Website" onclick="stopSroll('Projects')"><button class="btn">Website</button></a></li>
+                            <li><a href="#Projects/Electronics" onclick="stopSroll('Projects')"><button class="btn">Electronics</button></a></li>
+                        </ul>
+                        <img src="../images/DSC_0016.jpg" alt="">
+                    </figcaption>
+                </figure>
+            </div>
         </div>
-        <div>
-            <P>test text</P>
-        </div>
-        <img src="../images/DSC_0020.jpg" alt=""/>
-    </div>
 
-    <div>
-        <div class="sublightbox" id="Projects/UIPath">
+        <div class="lightbox" id="About">
             <figure>
-                <a href="#Projects" class="close"></a>
+                <a href="#" class="close" onclick="startScroll('body')"></a>
                 <figcaption>
-                    Uipath text
+                    about text goes here
                 </figcaption>
             </figure>
-        </div> 
-        <div class="sublightbox" id="Projects/Website">
-            <figure>
-                <a href="#Projects" class="close"></a>
-                <figcaption>
-                      website text goes here
-                </figcaption>
-            </figure>
-        </div>  
-        <div class="sublightbox" id="Projects/Electronics">
-            <figure>
-                <a href="#Projects" class="close"></a>
-                <figcaption>
-                    electronics text goes here
-                </figcaption>
-            </figure>
-        </div>
-        <div class="lightbox" id="Projects">
-            <figure>
-                <a href="#" class="close" onclick="startScroll()"></a>
-                <figcaption>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis enim, placerat id eleifend eu, semper vel sem.
-                    <ul class="btns">
-                        <li><a href="#Projects/UIPath"><button class="btn">Open UIPath</button></a></li>
-                        <li><a href="#Projects/Website"><button class="btn">Website</button></a></li>
-                        <li><a href="#Projects/Electronics"><button class="btn">Electronics</button></a></li>
-                    </ul>
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-
-    <div class="lightbox" id="About">
-        <figure>
-            <a href="#" class="close" onclick="startScroll()"></a>
-            <figcaption>
-                about text goes here
-            </figcaption>
-        </figure>
-    </div>     
-</body>
-<script src="main.js"></script>
+        </div>     
+    </body>
+    <script src="main.js"></script>
 </html>

@@ -1,9 +1,9 @@
-function stopScroll() {
-    const body = document.getElementById('body');
-    body.style.overflow = 'hidden';
+function stopScroll(id) {
+    const elem = document.getElementById(id);
+    elem.style.overflow = 'hidden';
 };
 
-function startScroll() {
-    const body = document.getElementById('body');
-    body.style.overflow = 'auto';
+function startScroll(id) {
+    const elem = document.getElementById(id);
+    elem.style.overflow = 'auto';
 }
