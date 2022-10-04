@@ -38,7 +38,7 @@ body {
 
 img {
     max-width: 100%;
-    height: 100%;
+    min-height: 100%;
     overflow: hidden;
     object-fit: cover;
     border-radius: 10px;
@@ -58,6 +58,11 @@ img {
     .grid {
         grid-template-columns: repeat( 1, 1fr);
     }
+}
+
+embed {
+    width: 70vw;
+    height: 50vw;
 }
 
 .lightbox {
@@ -83,7 +88,7 @@ img {
     background: #ededed;
 	padding: 30px;
 	border-radius: 10px;
-    top: 4vw;
+    top: 2vw;
 }
 
 .lightbox .close {
@@ -106,7 +111,7 @@ img {
     color: white;
     content: "×";
     cursor: pointer;
-    top: 3vw;
+    top: 1vw;
 }
 
 .lightbox .close:hover::after {
@@ -157,7 +162,7 @@ img {
 	padding: 30px;
 	border-radius: 10px;
     z-index: 2;
-    top: 4vw;
+    top: 2vw;
 }
 
 .sublightbox .close {
@@ -181,7 +186,7 @@ img {
     content: "×";
     cursor: pointer;
     z-index: 3;
-    top: 3vw;
+    top: 1vw;
 }
 
 .sublightbox .close:hover::after {
