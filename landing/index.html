@@ -9,36 +9,53 @@
             <div>
                 <h1>alexander barpal</h1>
                 <ul class="btns">
-                    <li><a href="#Projects" onclick="stopScroll('body')"><button class="btn">Open Projects</button></a></li>
-                    <li><a href="#About" onclick="stopScroll('body')"><button class="btn">Open about</button></a></li>
+                    <li><a href="#Projects"><button class="btn">Open Projects</button></a></li>
+                    <li><a href="#About"><button class="btn">Open about</button></a></li>
+                    <li><a href="#Contact"><button class="btn">Contact Me</button></a></li>
+                    <li><a href="#Resume"><button class="btn">Download My Resume</button></a></li>
                 </ul>
             </div>
-            <div>
-                <P>test text</P>
-            </div>
-            <img src="../images/DSC_0020.jpg" alt=""/>
         </div>
 
         <div>
             <div class="sublightbox" id="Projects/UIPath">
                 <figure>
-                    <a href="#Projects" class="close" onclick="startScroll('Projects')"></a>
-                    <figcaption>
+                    <a href="#Projects" class="close"></a>
+                    <figcaption class="grid">
                         <img src="../images/DSC_0057.jpg" alt="">
+                        <div>
+                            <p>
+                                This project was undertaken by me and a coworker, 
+                            our goal for this project was to us UIPath to automate what 
+                            would otherwise be a time-consuming manual task.
+                            The manual task that we were working to automate took around 5
+                            minutes and 20 steps spread across multiple websites, as this task
+                            needed to be preformed around 10,000 times it was infeasable to preform
+                            by hand with just the two of us. Our tight deadline meant that we needed to complete this project as fast as possible
+                            which lead to some difficult design requirements.
+                        </p>
+                        <p>
+                                The Automation solution we arrived at consisted of several different automation programs each designed
+                            to handle one section of the manual task. We deciced to break the automation up in to multiple parts becuase despite our ability to create a single program to handle the entire process
+                            one our main goals was to save time so as to meet our deadline and we discoved that repeating certains steps of the process on many items at once was significantly faster
+                            than doing every step for each item before moving on to the next. We also ended up seperating ech section into its own program so as to save time on troubleshooting the many
+                            issues of a creating a larger program as well as to make each program easier to manual stop or start.
+                        </p>
+                        </div>
                     </figcaption>
                 </figure>
-            </div> 
+            </div>
             <div class="sublightbox" id="Projects/Website">
                 <figure>
-                    <a href="#Projects" class="close" onclick="startScroll('Projects')"></a>
+                    <a href="#Projects" class="close"></a>
                     <figcaption>
                         website text goes here
                     </figcaption>
                 </figure>
-            </div>  
+            </div>
             <div class="sublightbox" id="Projects/Electronics">
                 <figure>
-                    <a href="#Projects" class="close" onclick="startScroll('Projects')"></a>
+                    <a href="#Projects" class="close"></a>
                     <figcaption>
                         electronics text goes here
                     </figcaption>
@@ -46,15 +63,28 @@
             </div>
             <div class="lightbox" id="Projects">
                 <figure>
-                    <a href="#" class="close" onclick="startScroll('body')"></a>
-                    <figcaption>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis enim, placerat id eleifend eu, semper vel sem.
-                        <ul class="btns">
-                            <li><a href="#Projects/UIPath" onclick="stopSroll('Projects')"><button class="btn">Open UIPath</button></a></li>
-                            <li><a href="#Projects/Website" onclick="stopSroll('Projects')"><button class="btn">Website</button></a></li>
-                            <li><a href="#Projects/Electronics" onclick="stopSroll('Projects')"><button class="btn">Electronics</button></a></li>
-                        </ul>
-                        <img src="../images/DSC_0016.jpg" alt="">
+                    <a href="#" class="close"></a>
+                    <figcaption class="grid">
+                        <img src="../images/uipath.png" alt="">
+                        <div>
+                            <h2>UIPath Website Automation</h2>
+                            <p>A professional project that involved automating a time-consuming manual process.</p>
+                            <a href="#Projects/UIPath"><button class="btn">Read More</button></a>
+                        </div>
+                        <div>
+                            <h2>The craetion of this Website</h2>
+                            <p>
+                                This portfolio website which I programmed from scratch.
+                            </p>
+                            <a href="#Projects/Website"><button class="btn">Read More</button></a>
+                        </div>
+                        <img src="../images/website.png" alt="">
+                        <img src="../images/6502.png" alt="">
+                        <div>
+                            <h2>Breadboard Computer</h2>
+                            <p>The building of an 8-bit computer on a breadboard using a 6502 CPU</p>
+                            <a href="#Projects/Electronics"><button class="btn">Read More</button></a>
+                        </div>
                     </figcaption>
                 </figure>
             </div>
@@ -62,12 +92,30 @@
 
         <div class="lightbox" id="About">
             <figure>
-                <a href="#" class="close" onclick="startScroll('body')"></a>
+                <a href="#" class="close"></a>
                 <figcaption>
                     about text goes here
                 </figcaption>
             </figure>
-        </div>     
+        </div>
+
+        <div class="lightbox" id="Contact">
+            <figure>
+                <a href="#" class="close"></a>
+                <figcaption>
+                    contact info
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="lightbox" id="Resume">
+            <figure>
+                <a href="#" class="close"></a>
+                <figcaption>
+                    resume goes here
+                </figcaption>
+            </figure>
+        </div>
     </body>
     <script src="main.js"></script>
 </html>

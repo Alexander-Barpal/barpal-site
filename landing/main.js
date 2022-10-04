@@ -1,9 +1,13 @@
-function stopScroll(id) {
-    const elem = document.getElementById(id);
-    elem.style.overflow = 'hidden';
-};
+window.onhashchange = hashChange;
 
-function startScroll(id) {
-    const elem = document.getElementById(id);
-    elem.style.overflow = 'auto';
+function hashChange() {
+    if (location.hash == '') {
+        document.getElementById('body').style.overflow = 'auto';
+    } else if (location.hash == '#Projects') {
+        document.getElementById('body').style.overflow = 'hidden';
+        document.getElementById('Projects').style.overflow = 'auto';
+    } else {
+        document.getElementById('body').style.overflow = 'hidden';
+        document.getElementById('Projects').style.overflow = 'hidden';
+    }
 }
