@@ -1,119 +1,95 @@
-let matrix = [8][8];
+const BLANK_BOARD = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  ]
 
-function randInt(max) {
-    return (Math.floor(Math.random() * max) + 1);
+const rowSafe = (puzzle, cell, num) => {
+    return puzzle[cell.rowIndex].indexOf(num) == -1
 }
 
-function numFits(r, c, num){
-    return (
-        fitsBox(r - r % 3, c - c % 3, num)
-        && fitsRow(r, num)
-        && fitsCol(c, num)
-    );
+const colSafe = (puzzle, cell, num) => {
+    return !puzzle.some(row => row[cell.colIndex] == num)
 }
 
-function fitsBox(row, col, num){
-    for(r = 0; r < 3; r++){
-        for(c = 0; c < 3; c++){
-            if(matrix[row + r][col + c] == num){
-                return false;
+const boxSafe = (puzzle, cell, num) => {
+    boxStartRow = cell.rowIndex - (cell.rowIndex % 3)
+    boxStartCol = cell.colIndex - (cell.colIndex % 3)
+    let safe = true
+
+    for(boxRow of [0, 1, 2]){
+        for(boxCol of [0, 1, 2]){
+            if(puzzle[boxStartRow + boxRow][boxStartCol + boxCol] == num){
+                safe = false
             }
         }
     }
-    return true;
+    return safe
 }
 
-function fitsRow(r, num){
-    for(c = 0; c < 9; c++){
-        if(matrix[r][c] == num){
-            return false;
-        }
-    }
-    return true;
+const safeNum = (puzzle, cell, num) => {
+    return rowSafe(puzzle, cell, num) && colSafe(puzzle, cell, num) && boxSafe(puzzle, cell, num)
 }
 
-function fitsCol(c, num){
-    for(r = 0; r < 9; r++){
-        if(matrix[r][c] == num){
-            return false;
-        }
-    }
-    return true;
+const nextCell = puzzle => {
+    const cell = {rowIndex: "", colIndex: ""}
+    puzzle.forEach( (row, rowIndex) => {
+        if(cell.rowIndex !== "") return  
+
+        let zero = row.find(col => col === 0)
+
+        if(zero === undefined) return;
+
+        cell.rowIndex = rowIndex
+        cell.colIndex = row.indexOf(zero)
+    })
+    if(cell.colIndex !== "") return cell
+
+    return false
 }
 
-function fillBox(row, col){
-    for(r = 0; r < 3; r++){
-        for(c = o; c < 3; c++){
-            do {
-                num = randInt(9);
-            } while (!fitsBox(row, col, num));
-            matrix[row + r][col + c] = num;
-        }
+const numArray = [1,2,3,4,5,6,7,8,9]
+
+const shuffle = array => {
+    let newArray = [...array]
+
+    for(let i = newArray.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
+    return newArray
 }
 
-function fillDiag(){
-    for (i = 0; i < 9; i += 3) {
-        fillBox(i, i);
+const fillPuzzle = startingBoard => {
+    const cell = nextCell(startingBoard)
+    if(!cell) return startingBoard
+    
+    for(num of shuffle(numArray)) {
+        counter++
+        if(counter > 20000000) throw new Error ("recursion timeout")
+        if (safeNum(startingBoard, cell, num)){
+            startingBoard[cell.rowIndex][cell.colIndex] = num
+            if (fillPuzzle(startingBoard)) return startingBoard
+            startingBoard[cell.rowIndex][cell.colIndex] = 0
+        }
     }
+    return false
 }
 
-function fillGrid(r, c){
-    if(r >= 9 && c >= 9){
-        return true;
-    }
-
-    if (c >= 9 && r < 8) {
-        r++;
-        c= 0;
-    }
-
-    if (r < 3){
-        if (c < 3){
-            c += 3;
-        }
-    }
-    else if(r <6){
-        if(c >= 3 && c < 6){
-            c += 3;
-        }
-    }
-    else {
-        if (c == 6) {
-            r++;
-            c = 0;
-            if (r <= 9) {
-                return true;
-            }
-        }
-    }
-
-    for(num = 1; num <= 9; num++){
-        if(numFits(r, c, num)){
-            matrix[r][c] = num;
-            if(fillGrid(r, c++)){
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
-
-function removeNums(dif){
-    count = dif;
-    while(count != 0){
-        r = (randInt(9) - 1);
-        c = (randInt(9) - 1);
-        if(matrix[r][c] != 0){
-            count--;
-            matrix[r][c] = 0;
+const solvedBoard = _ => {
+    const newBoard = BLANK_BOARD.map(row => row.slice)
+    fillPuzzle(newBoard)
+    return newBoard
+    for(row of newBoard[[]]){
+        for(col of newBoard[row]){
+            console.log(newBoard[row][col])
         }
     }
 }
 
-function fillPuzzle(){
-    fillDiag();
-    fillGrid(0, 3);
-    removeNums(dif);
-}
