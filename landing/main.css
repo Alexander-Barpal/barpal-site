@@ -11,12 +11,35 @@ body {
 	align-content: center;
     text-align: center;
     word-break: normal;
+    padding-bottom: 5vh;
 }
 
 p {
     text-align: justify;
     text-indent: 3em;
     padding: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:#ededed;
+    border-top: 3px groove #E0E0E0;
+    z-index: 10;
+}
+footer div {
+    display: inline-block;
+}
+footer div a {
+    margin: 5px;
+    max-width: 100%;
+}
+
+svg {
+    position: relative;
+    top: 0.5vh;
 }
 
 .btn {
@@ -32,13 +55,14 @@ p {
 	padding: 10px;
 	cursor: pointer;
 	transition-duration: 0.5s;
+    text-decoration: none;
 }
 
 .btn:hover {
 	background-color: #353535;
 	color: #E0E0E0;
+    fill: #E0E0E0;
 }
-
 .btns {
     list-style: none;
 }

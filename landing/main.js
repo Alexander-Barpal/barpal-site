@@ -11,3 +11,7 @@ function hashChange() {
         document.getElementById('Projects').style.overflow = 'hidden';
     }
 }
+
+const test = _ => {
+    console.log('test');
+}
