@@ -1,0 +1,127 @@
+:root {
+    --background: rgb(0, 0, 0);
+    --background-fade: rgba(0, 0, 0, 0.2);
+    --text: rgba(255, 255, 255);
+    --border: rgb(255, 255, 255);
+    --theme-icon: rgb(200, 200, 60);
+    --nav-hover: rgb(55, 55, 55);
+}
+
+:root[data-light = 'true'] {
+    --background: rgb(255, 255, 255);
+    --background-fade: rgba(255, 255, 255, 0.2);
+    --text: rgb(0, 0, 0);
+    --border: rgb(0, 0, 0);
+    --theme-icon: rgb(140, 140, 190);
+    --nav-hover: rgb(225, 225, 225);
+}
+
+* {
+    transition: all 0.5s ease-in-out;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.container {
+    margin: 5%;
+    width: 90%;
+    
+    position: relative;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif", "Arial Narrow";	
+	font-size: 18pt;
+    font-variant: small-caps;
+    color: var(--text);
+}
+
+.content {
+    height: 70vh;
+    border: 2px solid var(--border);
+    padding: 20px;
+    /* background: radial-gradient(var(--background-fade), var(--background)); */
+}
+/*
+.background {
+    background-image: radial-gradient(var(--text) 1px, transparent 0);
+    background-size: 15px 15px;
+}*/
+
+ul {
+    position: relative;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--text);
+    padding: 0%;
+    margin: 0%;
+    overflow: hidden;
+    border-left: 2px solid var(--border);
+}
+
+li {
+    list-style-type: none;
+    float: left;
+    border-right: 2px solid var(--border);
+    border-top: 2px solid var(--border);
+}
+li.themeBtn {
+    float: right;
+    border: none;
+}
+.themeBtn button {
+    text-decoration: none;
+    text-align: center;
+    color: var(--theme-icon);
+    background-color: var(--background);
+    font-size: 40px;
+    line-height: 40px;
+}
+
+li a {
+    display: block;
+    padding: 10px;
+    background-color: var(--background);
+    color: var(--text);
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: var(--nav-hover);
+}
+
+li a:active {
+    background-color: var(--text);
+    color: var(--background);
+}
+
+li a.active {
+    background-color: var(--text);
+    color: var(--background);
+}
+
+#home {
+    width: 100%;
+    position: absolute;
+    visibility: visible;
+    opacity: 100;
+}
+
+.tab {
+    width: 100%;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.tab:target {
+    position: absolute;
+    visibility: visible;
+    opacity: 100;
+}
+
+.tab:target ~ #home {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
