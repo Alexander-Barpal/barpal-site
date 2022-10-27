@@ -167,7 +167,7 @@ embed {
     background-color: black;
     border-radius: 50%;
     color: white;
-    content: "X";
+    content: x;
     cursor: pointer;
     top: 1vw;
 }
@@ -183,7 +183,7 @@ embed {
     height: 100%;
     position: fixed;
     background-color: rgba(0, 0, 0, .7);
-    content: "";
+    content: "x";
     cursor: default;
 }
 
@@ -246,7 +246,7 @@ embed {
     background-color: black;
     border-radius: 50%;
     color: white;
-    content: "X";
+    content: "x";
     cursor: pointer;
     z-index: 3;
     top: 1vw;
